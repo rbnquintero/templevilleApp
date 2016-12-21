@@ -1,0 +1,31 @@
+{
+  "name": "templevilleApp",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "parse": "^1.9.2",
+    "react": "15.4.1",
+    "react-native": "0.39.2",
+    "react-native-drawer": "^2.3.0",
+    "react-native-fs": "^2.0.1-rc.2",
+    "react-native-simple-store": "^1.1.0",
+    "react-redux": "^5.0.1",
+    "redux": "^3.6.0",
+    "redux-logger": "^2.7.4",
+    "redux-promise": "^0.5.3",
+    "redux-thunk": "^2.1.0"
+  },
+  "devDependencies": {
+    "babel-jest": "18.0.0",
+    "babel-preset-react-native": "1.9.1",
+    "jest": "18.0.0",
+    "react-test-renderer": "15.4.1"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
