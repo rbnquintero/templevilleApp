@@ -20,6 +20,10 @@ var logger = createLogger({
 
 let store = createStore(reducers, applyMiddleware(thunkMiddleware, promise, logger));
 
+var Parse = require('parse/react-native')
+Parse.initialize("HPry3wMRFE8fulZJQmvpbSAAPRJSgpMOpiDr5GqB", "kwEYlmoTBP98IqHgDbXaH3ZOyQnTi1kKafRCxjLk");
+Parse.serverURL = 'https://parseapi.back4app.com/'
+
 class Setup extends Component {
   render() {
     return (
