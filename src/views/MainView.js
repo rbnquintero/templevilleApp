@@ -4,23 +4,55 @@ import {
   Text,
   View
 } from 'react-native';
+import Drawer from 'react-native-drawer'
+var Menu = require('./common/Menu');
+var NoticiasMain = require('./noticias/NoticiasMain');
+var Creencias = require('./webviews/Creencias');
+var Nosotros = require('./simplepages/Nosotros');
+
+/* REDUX */
+import type {State as Navigation} from '../reducers/navReducer';
+var { connect } = require('react-redux');
+type Props = {
+  nav: Navigation;
+};
 
 class MainView extends Component {
+  closeDrawer = () => {
+    this._drawer.close()
+  }
+
+  openDrawer = () => {
+    this._drawer.open()
+  }
 
   render() {
+
+    var component = null;
+    if (this.props.nav.pantalla === 'noticias') {
+      component = (<NoticiasMain closeDrawer={this.closeDrawer} openDrawer={this.openDrawer}/>)
+    } else if (this.props.nav.pantalla === 'creencias') {
+        component = (<Creencias closeDrawer={this.closeDrawer} openDrawer={this.openDrawer}/>)
+    } else if (this.props.nav.pantalla === 'nosotros') {
+        component = (<Nosotros closeDrawer={this.closeDrawer} openDrawer={this.openDrawer}/>)
+    }
+
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
+      <Drawer
+        ref={c => this._drawer = c}
+        type="overlay"
+        openDrawerOffset={0.2}
+        panOpenMask={0.2}
+        tapToClose={true}
+        content={<Menu closeDrawer={this.closeDrawer} openDrawer={this.openDrawer}/>}
+        tweenHandler={(ratio) => ({
+          main: { opacity:(2-ratio)/2 }
+        })}
+        >
+        <View style={{flex:1}}>
+          {component}
+        </View>
+      </Drawer>
     );
   }
 }
@@ -44,4 +76,10 @@ const styles = StyleSheet.create({
   },
 });
 
-module.exports = MainView
+function select(store) {
+  return {
+    nav: store.navReducer,
+  };
+}
+
+module.exports = connect(select)(MainView);
