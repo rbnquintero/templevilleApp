@@ -154,7 +154,7 @@ class ItemWrapperIOS extends Component {
         </TextN>
       );
     } else if (icon) {
-      content = (<Image source={icon} style={[iconstyle]}/>);
+      content = (<Image source={icon} style={[iconstyle, {width:20,height:20, resizeMode:'contain'}]}/>);
     }
 
     return (
