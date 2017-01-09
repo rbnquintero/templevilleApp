@@ -30,7 +30,7 @@ class Menu extends Component {
         <View style={{flexDirection:'row'}}>
           <View style={{backgroundColor:'rgb(75,32,127)', flex:1, paddingVertical:20}}>
             <View style={{alignItems:'center', marginVertical:10}}>
-              <Image source={require('image!logo')} style={{resizeMode:'contain', height:90, width:90}}/>
+              <Image source={{uri:'logo'}} style={{resizeMode:'contain', height:90, width:90}}/>
             </View>
             <Text style={{fontFamily:'Oswald', color:'white', textAlign:'center', fontSize:16}}>
               TEMPLEVILLE SPANISH SDA CHURCH

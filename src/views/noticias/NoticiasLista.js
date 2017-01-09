@@ -99,7 +99,7 @@ class NoticiasLista extends Component {
           leftItem={{
             layout: 'icon',
             title: 'Menu',
-            icon: require('image!hamburger'),
+            icon: {uri:'hamburger'},
             onPress: this.props.navigator.props.openDrawer,
           }}/>
         <View style={{ flex: 1 }}>

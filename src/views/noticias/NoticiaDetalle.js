@@ -28,7 +28,7 @@ class NoticiaDetalle extends Component {
           leftItem={{
             layout: 'icon',
             title: 'Close',
-            icon: require('image!back'),
+            icon: {uri:'back'},
             onPress: this.props.navigator.pop,
           }}/>
         <ScrollView showsVerticalScrollIndicator={false} style={{ marginHorizontal: 20 }}>

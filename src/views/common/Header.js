@@ -222,7 +222,7 @@ module.exports = Header;
 module.exports.__cards__ = (define) => {
   const menuItem = {
     title: 'Menu',
-    icon: require('image!hamburger'),
+    icon: {uri:'hamburger'},
     onPress: () => alert('Menu button pressed!'),
   };
 

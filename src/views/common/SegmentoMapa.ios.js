@@ -1,9 +1,8 @@
-import React, {
-  Component,
+import React, { Component } from 'react';
+import {
   StyleSheet,
   TouchableOpacity,
   Image,
-  TextInput,
   View
 } from 'react-native';
 import MapView from 'react-native-maps'

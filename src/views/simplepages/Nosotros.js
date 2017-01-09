@@ -31,7 +31,7 @@ class Nosotros extends Component {
           leftItem={{
             layout: 'icon',
             title: 'Menu',
-            icon: require('image!hamburger'),
+            icon: {uri:'hamburger'},
             onPress: this.props.openDrawer,
           }}/>
         <Text style={styles.welcome}>Templeville Spanish SDA Church</Text>

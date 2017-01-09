@@ -17,7 +17,7 @@ class Creencias extends Component {
           leftItem={{
             layout: 'icon',
             title: 'Menu',
-            icon: require('image!hamburger'),
+            icon: {uri:'hamburger'},
             onPress: this.props.openDrawer,
           }}/>
         <WebView
