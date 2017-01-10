@@ -9,10 +9,16 @@ target 'templevilleApp' do
     source 'https://github.com/CocoaPods/Specs.git'
     pod 'React', :path => '../node_modules/react-native', :subspecs => [
       'Core',
-      'RCTText',
+      'RCTActionSheet',
+      'RCTAnimation',
+      'RCTGeolocation',
       'RCTImage',
+      'RCTLinkingIOS',
       'RCTNetwork',
-      'RCTWebSocket', # needed for debugging
+      'RCTSettings',
+      'RCTText',
+      'RCTVibration',
+      'RCTWebSocket'
     ]
     pod 'RNFS', :path => '../node_modules/react-native-fs'
     pod 'BVLinearGradient', :path => '../node_modules/react-native-linear-gradient'
