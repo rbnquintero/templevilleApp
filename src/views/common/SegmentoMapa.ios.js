@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import {
   StyleSheet,
+  Text,
   TouchableOpacity,
   Image,
   View
 } from 'react-native';
 import MapView from 'react-native-maps'
+import CustomCallout from './CustomCallout';
 
 class SegmentoMapa extends Component {
   constructor(props){
@@ -20,19 +22,31 @@ class SegmentoMapa extends Component {
       <MapView
         style={ styles.map }
         showsUserLocation={true}
-        annotations={[{
-          latitude: lat,
-          longitude: lon,
-          animateDrop: true,
-          draggable: false,
-        }]}
         region={{
           latitude: lat,
           longitude: lon,
           latitudeDelta: 0.01,
           longitudeDelta: 0.01,
-        }}
-      />
+        }}>
+        <MapView.Marker
+          coordinate={{
+            latitude: lat,
+            longitude: lon,
+            animateDrop: true,
+            draggable: false
+          }}
+          title={this.props.titulo}/>
+      </MapView>
+    );
+  }
+}
+
+class ChurchIcon extends Component {
+  render() {
+    return (
+      <View>
+        <Image source={{uri:'church'}} style={{width:30, height:30, resizeMode:'contain'}}/>
+      </View>
     );
   }
 }
