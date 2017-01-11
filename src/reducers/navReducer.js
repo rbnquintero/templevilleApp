@@ -26,6 +26,10 @@ function navigation(state: State = initialState, action): State {
     return {
       pantalla: 'biblia',
     }
+  } else if (action.type === 'PANTALLA_VERSICULOS') {
+    return {
+      pantalla: 'versiculos',
+    }
   } else if (action.type === 'PANTALLA_SAMPLE') {
     return {
       pantalla: 'sample',

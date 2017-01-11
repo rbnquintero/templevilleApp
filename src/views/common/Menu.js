@@ -14,6 +14,7 @@ var {
   toNoticias,
   toNosotros,
   toBiblia,
+  toVersiculos,
   toSamplePage,
 } = require('../../actions');
 type Props = {
@@ -22,6 +23,7 @@ type Props = {
   toCreencias: () => void;
   toNosotros: () => void;
   toBiblia: () => void;
+  toVersiculos: () => void;
   toSamplePage: () => void;
 };
 
@@ -61,7 +63,7 @@ class Menu extends Component {
             </Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity style={{flexDirection:'row'}} onPress={() => {this.props.closeDrawer(); this.props.toSamplePage();}}>
+        <TouchableOpacity style={{flexDirection:'row'}} onPress={() => {this.props.closeDrawer(); this.props.toVersiculos();}}>
           <View style={{backgroundColor:'#fbf9f3', flex:1, margin:3}}>
             <Text style={styles.welcome}>
               Versículo del día
@@ -127,6 +129,7 @@ function actions(dispatch) {
     toCreencias: () => dispatch(toCreencias()),
     toNosotros: () => dispatch(toNosotros()),
     toBiblia: () => dispatch(toBiblia()),
+    toVersiculos: () => dispatch(toVersiculos()),
     toSamplePage: () => dispatch(toSamplePage()),
   };
 }

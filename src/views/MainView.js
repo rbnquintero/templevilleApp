@@ -10,6 +10,7 @@ var NoticiasMain = require('./noticias/NoticiasMain');
 var Creencias = require('./webviews/Creencias');
 var Nosotros = require('./simplepages/Nosotros');
 var SantaBiblia = require('./webviews/SantaBiblia');
+var Versiculos = require('./versiculos/Versiculos');
 
 var Sample = require('./simplepages/Sample');
 
@@ -40,6 +41,8 @@ class MainView extends Component {
         component = (<Nosotros closeDrawer={this.closeDrawer} openDrawer={this.openDrawer}/>)
     } else if (this.props.nav.pantalla === 'biblia') {
         component = (<SantaBiblia closeDrawer={this.closeDrawer} openDrawer={this.openDrawer}/>)
+    } else if (this.props.nav.pantalla === 'versiculos') {
+        component = (<Versiculos closeDrawer={this.closeDrawer} openDrawer={this.openDrawer}/>)
     } else if (this.props.nav.pantalla === 'sample') {
         component = (<Sample closeDrawer={this.closeDrawer} openDrawer={this.openDrawer}/>)
     }
