@@ -8,24 +8,16 @@ import {
 } from 'react-native';
 
 /* REDUX */
-import type {State as Navigation} from '../../reducers/navReducer';
 var { connect } = require('react-redux');
 var {
   toNoticias,
   toNosotros,
   toBiblia,
   toVersiculos,
+  toOracion,
+  toCalendario,
   toSamplePage,
 } = require('../../actions');
-type Props = {
-  nav: Navigation;
-  toNoticias: () => void;
-  toCreencias: () => void;
-  toNosotros: () => void;
-  toBiblia: () => void;
-  toVersiculos: () => void;
-  toSamplePage: () => void;
-};
 
 class Menu extends Component {
 
@@ -70,7 +62,7 @@ class Menu extends Component {
             </Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity style={{flexDirection:'row'}} onPress={() => {this.props.closeDrawer(); this.props.toSamplePage();}}>
+        <TouchableOpacity style={{flexDirection:'row'}} onPress={() => {this.props.closeDrawer(); this.props.toCalendario();}}>
           <View style={{backgroundColor:'#fbf9f3', flex:1, margin:3}}>
             <Text style={styles.welcome}>
               Calendario
@@ -84,7 +76,7 @@ class Menu extends Component {
             </Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity style={{flexDirection:'row'}} onPress={() => {this.props.closeDrawer(); this.props.toSamplePage();}}>
+        <TouchableOpacity style={{flexDirection:'row'}} onPress={() => {this.props.closeDrawer(); this.props.toOracion();}}>
           <View style={{backgroundColor:'#fbf9f3', flex:1, margin:3}}>
             <Text style={styles.welcome}>
               Pedidos de Oración
@@ -130,6 +122,8 @@ function actions(dispatch) {
     toNosotros: () => dispatch(toNosotros()),
     toBiblia: () => dispatch(toBiblia()),
     toVersiculos: () => dispatch(toVersiculos()),
+    toOracion: () => dispatch(toOracion()),
+    toCalendario: () => dispatch(toCalendario()),
     toSamplePage: () => dispatch(toSamplePage()),
   };
 }

@@ -11,6 +11,7 @@ var Creencias = require('./webviews/Creencias');
 var Nosotros = require('./simplepages/Nosotros');
 var SantaBiblia = require('./webviews/SantaBiblia');
 var Versiculos = require('./versiculos/Versiculos');
+var Oracion = require('./simplepages/Oracion');
 
 var Sample = require('./simplepages/Sample');
 
@@ -43,6 +44,10 @@ class MainView extends Component {
         component = (<SantaBiblia closeDrawer={this.closeDrawer} openDrawer={this.openDrawer}/>)
     } else if (this.props.nav.pantalla === 'versiculos') {
         component = (<Versiculos closeDrawer={this.closeDrawer} openDrawer={this.openDrawer}/>)
+    } else if (this.props.nav.pantalla === 'oracion') {
+        component = (<Oracion closeDrawer={this.closeDrawer} openDrawer={this.openDrawer}/>)
+    } else if (this.props.nav.pantalla === 'calendario') {
+        component = (<Sample closeDrawer={this.closeDrawer} openDrawer={this.openDrawer}/>)
     } else if (this.props.nav.pantalla === 'sample') {
         component = (<Sample closeDrawer={this.closeDrawer} openDrawer={this.openDrawer}/>)
     }

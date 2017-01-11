@@ -30,6 +30,14 @@ function navigation(state: State = initialState, action): State {
     return {
       pantalla: 'versiculos',
     }
+  } else if (action.type === 'PANTALLA_ORACION') {
+    return {
+      pantalla: 'oracion',
+    }
+  } else if (action.type === 'PANTALLA_CALENDARIO') {
+    return {
+      pantalla: 'calendario',
+    }
   } else if (action.type === 'PANTALLA_SAMPLE') {
     return {
       pantalla: 'sample',

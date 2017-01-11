@@ -6,6 +6,8 @@ const PANTALLA_CREENCIAS = 'PANTALLA_CREENCIAS';
 const PANTALLA_NOSOTROS = 'PANTALLA_NOSOTROS';
 const PANTALLA_BIBLIA = 'PANTALLA_BIBLIA';
 const PANTALLA_VERSICULOS = 'PANTALLA_VERSICULOS';
+const PANTALLA_ORACION = 'PANTALLA_ORACION';
+const PANTALLA_CALENDARIO = 'PANTALLA_CALENDARIO';
 
 const PANTALLA_SAMPLE = 'PANTALLA_SAMPLE';
 
@@ -42,10 +44,22 @@ function toVersiculos() {
   }
 }
 
+function toOracion() {
+  return {
+    type: PANTALLA_ORACION
+  }
+}
+
+function toCalendario() {
+  return {
+    type: PANTALLA_CALENDARIO
+  }
+}
+
 function toSamplePage() {
   return {
     type: PANTALLA_SAMPLE
   }
 }
 
-module.exports = {toNoticias, toCreencias, toNosotros, toBiblia, toVersiculos, toSamplePage}
+module.exports = {toNoticias, toCreencias, toNosotros, toBiblia, toVersiculos, toOracion, toCalendario, toSamplePage}

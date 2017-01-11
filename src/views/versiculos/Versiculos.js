@@ -15,10 +15,6 @@ var {
   loadVersiculos,
   fbRendered,
 } = require('../../actions');
-type Props = {
-  loadVersiculos: () => void;
-  fbRendered: () => void;
-};
 
 var Header = require('../common/Header')
 class Versiculos extends Component {
