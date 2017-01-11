@@ -22,6 +22,14 @@ function navigation(state: State = initialState, action): State {
     return {
       pantalla: 'nosotros',
     }
+  } else if (action.type === 'PANTALLA_BIBLIA') {
+    return {
+      pantalla: 'biblia',
+    }
+  } else if (action.type === 'PANTALLA_SAMPLE') {
+    return {
+      pantalla: 'sample',
+    }
   }
 
   return state;

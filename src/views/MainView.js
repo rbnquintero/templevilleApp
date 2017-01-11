@@ -9,6 +9,9 @@ var Menu = require('./common/Menu');
 var NoticiasMain = require('./noticias/NoticiasMain');
 var Creencias = require('./webviews/Creencias');
 var Nosotros = require('./simplepages/Nosotros');
+var SantaBiblia = require('./webviews/SantaBiblia');
+
+var Sample = require('./simplepages/Sample');
 
 /* REDUX */
 import type {State as Navigation} from '../reducers/navReducer';
@@ -35,6 +38,10 @@ class MainView extends Component {
         component = (<Creencias closeDrawer={this.closeDrawer} openDrawer={this.openDrawer}/>)
     } else if (this.props.nav.pantalla === 'nosotros') {
         component = (<Nosotros closeDrawer={this.closeDrawer} openDrawer={this.openDrawer}/>)
+    } else if (this.props.nav.pantalla === 'biblia') {
+        component = (<SantaBiblia closeDrawer={this.closeDrawer} openDrawer={this.openDrawer}/>)
+    } else if (this.props.nav.pantalla === 'sample') {
+        component = (<Sample closeDrawer={this.closeDrawer} openDrawer={this.openDrawer}/>)
     }
 
     return (

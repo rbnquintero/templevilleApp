@@ -13,13 +13,16 @@ var { connect } = require('react-redux');
 var {
   toNoticias,
   toNosotros,
-  toCreencias,
+  toBiblia,
+  toSamplePage,
 } = require('../../actions');
 type Props = {
   nav: Navigation;
   toNoticias: () => void;
   toCreencias: () => void;
   toNosotros: () => void;
+  toBiblia: () => void;
+  toSamplePage: () => void;
 };
 
 class Menu extends Component {
@@ -55,6 +58,34 @@ class Menu extends Component {
           <View style={{backgroundColor:'#fbf9f3', flex:1, margin:3}}>
             <Text style={styles.welcome}>
               Creencias Adventistas
+            </Text>
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity style={{flexDirection:'row'}} onPress={() => {this.props.closeDrawer(); this.props.toSamplePage();}}>
+          <View style={{backgroundColor:'#fbf9f3', flex:1, margin:3}}>
+            <Text style={styles.welcome}>
+              Versículo del día
+            </Text>
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity style={{flexDirection:'row'}} onPress={() => {this.props.closeDrawer(); this.props.toSamplePage();}}>
+          <View style={{backgroundColor:'#fbf9f3', flex:1, margin:3}}>
+            <Text style={styles.welcome}>
+              Calendario
+            </Text>
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity style={{flexDirection:'row'}} onPress={() => {this.props.closeDrawer(); this.props.toBiblia();}}>
+          <View style={{backgroundColor:'#fbf9f3', flex:1, margin:3}}>
+            <Text style={styles.welcome}>
+              Santa Biblia
+            </Text>
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity style={{flexDirection:'row'}} onPress={() => {this.props.closeDrawer(); this.props.toSamplePage();}}>
+          <View style={{backgroundColor:'#fbf9f3', flex:1, margin:3}}>
+            <Text style={styles.welcome}>
+              Pedidos de Oración
             </Text>
           </View>
         </TouchableOpacity>
@@ -95,6 +126,8 @@ function actions(dispatch) {
     toNoticias: () => dispatch(toNoticias()),
     toCreencias: () => dispatch(toCreencias()),
     toNosotros: () => dispatch(toNosotros()),
+    toBiblia: () => dispatch(toBiblia()),
+    toSamplePage: () => dispatch(toSamplePage()),
   };
 }
 
