@@ -4,7 +4,7 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
-  View
+  View,
 } from 'react-native';
 
 /* REDUX */
@@ -13,6 +13,7 @@ var {
   toNoticias,
   toNosotros,
   toBiblia,
+  toCreencias,
   toVersiculos,
   toOracion,
   toCalendario,

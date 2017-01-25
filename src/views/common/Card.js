@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     height: 220,
   },
   newscontainerTitulo: {
-    letterSpacing : 0.5,
+    letterSpacing: 0.5,
     textAlign: 'left',
     fontSize: 22,
     color: 'white',
